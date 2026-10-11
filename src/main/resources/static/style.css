@@ -1,0 +1,42 @@
+body { font-family: 'Segoe UI', sans-serif; }
+
+.movie-card { transition: transform 0.3s; cursor: pointer; }
+.movie-card:hover { transform: scale(1.03); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+.movie-card img { height: 350px; object-fit: cover; }
+
+.screen {
+    background: linear-gradient(to bottom, #fff, #999);
+    color: #000; padding: 10px; border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    width: 60%; margin: 0 auto; font-weight: bold;
+}
+
+.seat-grid {
+    display: grid; grid-template-columns: repeat(10, 1fr);
+    gap: 8px; max-width: 600px; margin: 0 auto;
+}
+
+.seat {
+    background: #28a745;      /* Green - Available */
+    padding: 10px; text-align: center;
+    border-radius: 5px; cursor: pointer; font-size: 12px;
+    transition: 0.2s; color: white;
+}
+.seat:hover { background: #218838; }
+.seat.selected { background: #ffc107; transform: scale(1.1); color: #000; }  /* Yellow - Selected */
+.seat.booked { 
+    background: #dc3545;       /* Red - Booked */
+    cursor: not-allowed; 
+    color: white;
+    opacity: 0.8;
+}
+.seat.booked:hover { background: #dc3545; }
+
+/* Legend */
+.legend { display: flex; justify-content: center; gap: 20px; }
+.legend-item { display: flex; align-items: center; gap: 5px; }
+.seat-box {
+    display: inline-block; width: 20px; height: 20px; border-radius: 4px;
+}
+.seat-box.available { background: #28a745; }
+.seat-box.selected-box { background: #ffc107; }
+.seat-box.booked { background: #dc3545; }
